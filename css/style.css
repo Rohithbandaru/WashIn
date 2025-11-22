@@ -404,45 +404,39 @@
 }
 
 .footer {
-	background-image: url(../img/footer-bg.png);
-	background-position: 0px 0px;
+    background-image: url(../img/evolution-car-silhouettes-vector-set-260nw-2657979489-removebg-preview.png);
+    background-position: 0px 0px;
     background-repeat: repeat-x;
-	animation: footerAnimatedBg 50s linear infinite;
-}
-/* Fix: Prevent Explore More button from breaking */
-.explore-btn {
-    white-space: nowrap;
-    padding-left: 28px;
-    padding-right: 28px;
-}
-/* ---------------------- */
-/* HERO SECTION FIX START */
-/* ---------------------- */
+    animation: footerAnimatedBg 50s linear infinite;
+    background-size: cover;
 
-/* Stronger dark overlay behind text */
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.45); /* increased darkness */
-    padding-top: 130px;
-    padding-bottom: 130px;
-    backdrop-filter: blur(1.5px); /* smooth premium look */
 }
 
-/* Dim the background image */
-#header-carousel .carousel-item img {
-    filter: brightness(40%);
+/* Custom image size override */
+.hero-img {
+    width: 100%;
+    max-width: 100%;
 }
-
-/* Improve text layout */
-.carousel-caption h1, 
-.carousel-caption p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+/* footer car icon — square, aligned with text */
+:root {
+    --car-icon-size: 64px; /* change this to match the car size you want */
+  }
+  
+  /* icon inside footer heading */
+  .footer .footer-car-icon {
+    width: var(--car-icon-size);
+    height: var(--car-icon-size);
+    object-fit: contain;      /* preserves aspect ratio without stretching */
+    vertical-align: middle;   /* aligns with the text baseline */
+    border-radius: 8px;       /* optional: rounded corners so it looks like an "emoji" */
+    display: inline-block;
+  }
+  
+  /* smaller on mobile */
+  @media (max-width: 767.98px) {
+    :root { --car-icon-size: 48px; } /* smaller size on phones */
+  }
+  .footer-car-icon {
+    filter: brightness(0) invert(1);
 }
-
-/* ---------------------- */
-/* HERO SECTION FIX END   */
-/* ---------------------- */
-
+  
